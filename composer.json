@@ -1,0 +1,24 @@
+{
+    "name": "panglongxia/mongo-php-test",
+    "description": "mongodb测试",
+    "authors": [
+        {
+            "name": "朱大蛋",
+            "email": "1294662090@qq.com"
+        }
+    ],
+    "require": {
+        "mongodb/mongodb": "^1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Panglongxia\\MongoTest\\": "./src"
+        }
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://mirrors.aliyun.com/composer/"
+        }
+    }
+}
