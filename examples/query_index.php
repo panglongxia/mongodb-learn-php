@@ -121,6 +121,22 @@ class TestQuery{
        $res = $collection->explain($find,['verbosity'=>'executionStats']);
        $this->varDump($res);
 
+   }
+
+   public function demoIn(){
+       $collection = Mongo::instance()->getCollection('test');
+       $filter = [
+           'days' => ['$in' => ['2020-02-06','2020-02-04']],
+       ];
+       //$res = $collection->count($filter);
+       //var_dump($res);
+
+       $countFind = new \MongoDB\Operation\Count($collection->getDatabaseName(), $collection->getCollectionName(), $filter);
+       $res = $collection->explain($countFind);
+       $this->varDump($res);
+
+//       $collection->createIndex(['days'=>1]);
+
 
    }
 
@@ -134,6 +150,6 @@ class TestQuery{
 $obj = new TestQuery();
 //$obj->prepareData();
 //die;
-$obj->demoFind1();
+$obj->demoIn();
 //$obj->demoNullUnique();
 
