@@ -13,11 +13,6 @@ class MongoHelper
         return  new ObjectId($id);
     }
 
-    public static function mongoIdString(ObjectId $objectId){
-        $objectId->serialize();
-    }
-
-
     //将对象转换成数组，直接复制的yii 中的方法
     public static function toArray($object, $properties = [], $recursive = true)
     {
